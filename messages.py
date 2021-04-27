@@ -12,6 +12,14 @@ HELP_MESSAGE = 'Commands:\n' \
                '/go - start building a route\n' \
                '/help - view this help message\n' \
                '/options - set advanced options (units, avoidance, traffic model, transit mode, transit routing)\n\n' \
+               'Options:\n' \
+               'transport: your travel mode (driving (default), bicycling, walking, transit)\n' \
+               'units: units system (metric (default) or imperial)\n' \
+               'avoid: (multiple) specified features to avoid (tolls, highways, ferries, indoor)\n' \
+               'traffic model: how model calculates traffic time (best_guess, optimistic, pessimistic)\n' \
+               'transit mode: (multiple) preferable transit modes (bus, subway, train, tram, rail)\n' \
+               'transit routing_preference: biases routes as selected (none (default), less_walking, ' \
+               'fewer_transfers)\n\n' \
                'Navigation:\n' \
                'This bot uses Google Maps Directions to build routes from point to point using given parameters. ' \
                'Set starting location, target location, waypoints (optional) and press start. Each location can be ' \
@@ -41,7 +49,7 @@ TRAVEL_MODE_MESSAGE = 'Choose your travel mode.\n' \
 UNITS_MESSAGE = 'Choose preferable units system\n' \
                 'Current: <b>{}</b>'
 
-AVOID_MESSAGE = 'Choose features to avoid\n' \
+AVOID_MESSAGE = 'Choose features to avoid (multiple) and press back\n' \
                 '<b>tolls</b>: avoid toll roads/bridges\n' \
                 '<b>highways</b>: avoid highways\n' \
                 '<b>ferries</b>: avoid ferries\n' \
@@ -56,7 +64,7 @@ TRAFFIC_MODEL_MESSAGE = 'Choose model calculating time in traffic\n' \
                         'conditions\n' \
                         'Current: <b>{}</b>'
 
-TRANSIT_MODE_MESSAGE = 'Choose preferable transit modes (affects only transit routes)\n' \
+TRANSIT_MODE_MESSAGE = 'Choose preferable transit modes (affects only transit routes) (multiple) and press back\n' \
                        '<b>bus</b>: prefer travel by bus\n' \
                        '<b>subway</b>: prefer travel by subway\n' \
                        '<b>train</b>: prefer travel by train\n' \
