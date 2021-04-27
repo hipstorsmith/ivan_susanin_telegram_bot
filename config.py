@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import os
 
 TG_TOKEN = os.getenv('TG_TOKEN')
