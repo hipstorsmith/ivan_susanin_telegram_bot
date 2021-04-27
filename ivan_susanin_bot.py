@@ -1,5 +1,3 @@
-# coding=utf-8
-
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
@@ -16,10 +14,15 @@ import messages
 import keyboard
 import parameters
 
-
-redis_storage = RedisStorage2(host=config.redis_host,
-                              port=config.redis_port,
-                              db=0)
+if config.redis_password:
+    redis_storage = RedisStorage2(host=config.redis_host,
+                                  port=config.redis_port,
+                                  password=config.redis_password,
+                                  db=0)
+else:
+    redis_storage = RedisStorage2(host=config.redis_host,
+                                  port=config.redis_port,
+                                  db=0)
 
 bot = Bot(token=config.TG_TOKEN)
 dp = Dispatcher(bot, storage=redis_storage)

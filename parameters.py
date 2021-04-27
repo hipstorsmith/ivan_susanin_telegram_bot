@@ -1,5 +1,3 @@
-# coding=utf-8
-
 PARAMETER_NAMES = {'mode': 'Travel mode',
                    'units': 'Units',
                    'avoid': 'Avoidance',

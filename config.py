@@ -1,6 +1,5 @@
-# coding=utf-8
-
 import os
+from urllib.parse import urlparse
 
 TG_TOKEN = os.getenv('TG_TOKEN')
 GMAPS_TOKEN = os.getenv('GMAPS_TOKEN')
@@ -33,8 +32,13 @@ DEFAULT_GEO_DATA = {'origin': None,
                     'directions': None
                     }
 
-redis_url = os.getenv('REDISCLOUD_URL', '127.0.0.1:6379')
+redis_url = os.getenv('REDIS_URL', '127.0.0.1:6379')
 redis_host, redis_port = redis_url.rsplit(':', 1)
+try:
+    redis_password, redis_host = redis_host.rsplit('@', 1)
+    redis_user, redis_password = redis_password.rsplit(':', 1)
+except ValueError:
+    redis_user, redis_password = '', ''
 
 GMAPS_DIRECTIONS_URL = 'https://maps.googleapis.com/maps/api/directions/json?'
 GMAPS_IMAGE_URL = 'https://maps.googleapis.com/maps/api/streetview?'
