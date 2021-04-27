@@ -33,7 +33,7 @@ DEFAULT_GEO_DATA = {'origin': None,
                     'directions': None
                     }
 
-redis_url = os.getenv('REDIS_URL', '127.0.0.1:6379')
+redis_url = os.getenv('REDISCLOUD_URL', '127.0.0.1:6379')
 redis_host, redis_port = redis_url.rsplit(':', 1)
 
 GMAPS_DIRECTIONS_URL = 'https://maps.googleapis.com/maps/api/directions/json?'
