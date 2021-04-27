@@ -387,7 +387,7 @@ async def process_confirmation(message: types.Message, state: FSMContext):
         'key': config.GMAPS_TOKEN
     }
     # Getting google maps data
-    gmaps_data = requests.get('https://maps.googleapis.com/maps/api/directions/json?', params=payload_maps).json()
+    gmaps_data = requests.get(config.GMAPS_DIRECTIONS_URL, params=payload_maps).json()
 
     if gmaps_data['status'] != 'OK':
         # Path not found

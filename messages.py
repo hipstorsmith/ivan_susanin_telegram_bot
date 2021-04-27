@@ -145,7 +145,7 @@ def reply_image(user_data):
         'heading': str(bearing),
         'key': config.GMAPS_TOKEN
     }
-    street_view = requests.get('https://maps.googleapis.com/maps/api/streetview?', params=payload_view)
+    street_view = requests.get(config.GMAPS_IMAGE_URL, params=payload_view)
     return street_view.content
 
 
