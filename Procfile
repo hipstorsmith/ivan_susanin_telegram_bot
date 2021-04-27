@@ -1,0 +1,1 @@
+worker: python ivan_susanin_bot.py
