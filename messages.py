@@ -148,7 +148,8 @@ def reply_image(user_data):
     payload_view = {
         'location': '{},{}'.format(end_coords['lat'], end_coords['lng']),
         'size': '600x400',
-        'heading': str(bearing),
+        'heading': bearing,
+        'source': 'outdoor',
         'key': config.GMAPS_TOKEN
     }
     street_view = requests.get(config.GMAPS_IMAGE_URL, params=payload_view)
