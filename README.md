@@ -4,6 +4,8 @@
 
 This bot uses Google Maps Directions API to create paths between points
 
+Link: https://t.me/ivan_susanin_pathfinder_bot
+
 ## Commands
 <b>/start</b> - start bot
 
